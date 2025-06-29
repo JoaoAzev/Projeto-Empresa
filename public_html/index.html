@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet"/>
+
+    <title>BD Enterprise</title>
+</head>
+<body>
+
+<!---->
+    <div class="listar">
+        <h3>Listar Banco de Dados da empresa</h3>
+        <p id="listar">
+            <input type="submit" id="btListar" value="Listar">
+            <ul id="listagem" class="listaCss">
+            </ul>
+        </p>
+    </div>
+<!---->
+    <div class="registrar">
+        <h3>Registrar</h3>
+    <form action="http://localhost:3030/registrar" method="post">
+        <p>Nome:</p> <input type="text" name="nome">
+        <p>Cargo:</p> <input type="text" name="cargo">
+        <p><input type="submit" value="Registrar" id="registrar"></p>
+    </form>
+    </div>
+<!---->
+    <div class="deletar">
+        <h3>Deletar</h3>
+    <form action="http://localhost:3030/deletar" method="post">
+        <p>Nome:</p> <input type="text" name="nome">
+        <p><input type="submit" value="Deletar" id="deletar"></p>
+    </form>
+    </div>
+<!---->
+    <div class="modificar">
+        <h3>Alterar Nome</h3>
+    <form action="http://localhost:3030/modificar" method="post">
+        <p>Novo nome:</p> <input type="text" name="novoNome">
+        <p>Nome a ser editado:</p> <input type="text" name="nomeSelecionado">
+        <p><input type="submit" value="Modificar" id="modificar"></p>
+    </form>
+    </div>
+<!---->
+<div class="modificarCargo">
+    <h3>Alterar Cargo</h3>
+<form action="http://localhost:3030/modificarCargo" method="post">
+    <p>Novo cargo:</p> <input type="text" name="novoCargo">
+    <p>Nome do funcionário:</p> <input type="text" name="nomeSelecionado">
+    <p><input type="submit" value="Modificar" id="modificar"></p>
+</form>
+</div>
+
+    <script>
+        const btListar = document.querySelector('#btListar');
+        btListar.addEventListener('click', listarBanco);
+
+        async function listarBanco() {
+            const resposta = await fetch('http://localhost:3030/listar');
+            const dados = await resposta.json();
+            const listagem = document.querySelector('#listagem')
+
+            for (const linha of dados) {
+                const umaLinha = document.createElement('li')
+                umaLinha.innerHTML = `
+                <li>${linha.nome}: ${linha.cargo}</li>
+                `;
+                listagem.appendChild(umaLinha)
+            }
+        }
+    </script>
+
+
+</body>
+</html>

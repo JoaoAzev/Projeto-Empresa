@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+}
+
+html, body {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-image: url('wpp.jpeg');
+}
+
+.listar {
+    background-color: aliceblue;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 25px;
+    text-align: center;
+    width: 600px;
+    height: 350px;
+} #listar {
+    margin-top: 10px;
+} .listaCss {
+    margin-top: 15px;
+}
+
+.registrar {
+    background-color: aliceblue;
+    text-align: center;
+    position: relative;
+    float: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    width: 300px;
+    height: 150px;
+} #registrar {
+    margin-top: 10px;
+}
+
+
+.deletar {
+    background-color: aliceblue;
+    text-align: center;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    width: 300px;
+    height: 100px;
+} #deletar {
+    margin-top: 10px;
+}
+
+
+.modificar {
+    background-color: aliceblue;
+    text-align: center;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 300px;
+    height: 150px;
+} #modificar {
+    margin-top: 10px;
+}
+
+.modificarCargo {
+    background-color: aliceblue;
+    text-align: center;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 300px;
+    height: 150px;
+} #modificar {
+    margin-top: 10px;
+}
+
+
+
+
